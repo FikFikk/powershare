@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:powershre/components/listview.dart';
-import 'package:powershre/screens/home/components/searchdelegate.dart';
+import 'package:powershre/components/searchdelegate.dart';
 import 'package:powershre/screens/setting_screen.dart';
-import 'package:powershre/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ScreenRuang extends StatelessWidget {

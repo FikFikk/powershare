@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:powershre/screens/home/screen_ruang.dart';
+import 'package:powershre/screens/screen_ruang.dart';
 import 'package:powershre/screens/setting_akun.dart';
-import 'package:powershre/screens/setting_bahasa.dart';
-import 'package:powershre/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:powershre/components/slider.dart';
 import '../main.dart';
 
 void main() {
@@ -30,19 +27,23 @@ class _SettingScreenState extends State<SettingScreen> {
         leadingWidth: 64,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ScreenRuang()));
+            Navigator.pop(context);
           },
-          icon: const Icon(Icons.keyboard_arrow_left),
+          icon: const Icon(
+            Icons.keyboard_arrow_left_rounded,
+            color: Colors.grey,
+          ),
         ),
         toolbarHeight: 70,
         title: Text(
           "Setelan",
           style: GoogleFonts.poppins(
-            textStyle: const TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+            textStyle:
+                const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Column(children: [

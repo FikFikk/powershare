@@ -23,19 +23,23 @@ class _SettingAkunState extends State<SettingAkun> {
         leadingWidth: 64,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SettingScreen()));
+            Navigator.pop(context);
           },
-          icon: const Icon(Icons.keyboard_arrow_left),
+          icon: const Icon(
+            Icons.keyboard_arrow_left_rounded,
+            color: Colors.grey,
+          ),
         ),
         toolbarHeight: 70,
         title: Text(
           "Setelan Akun",
           style: GoogleFonts.poppins(
-            textStyle: const TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+            textStyle:
+                const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Column(

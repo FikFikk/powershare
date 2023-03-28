@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:powershre/components/textfieldPass.dart';
 import 'package:powershre/screens/add_Kpekerjaan.dart';
+import 'package:powershre/screens/add_Kredensial.dart';
+import 'package:powershre/screens/add_question.dart';
 import 'package:powershre/screens/setting_akun.dart';
+import 'package:powershre/screens/ubah_sandi-1.dart';
 
 class UbahSandi2 extends StatefulWidget {
   const UbahSandi2({super.key});
@@ -20,11 +24,10 @@ class _UbahSandi2State extends State<UbahSandi2> {
           leadingWidth: 64,
           leading: IconButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const SettingAkun()));
+              Navigator.pop(context);
             },
             icon: const Icon(
-              Icons.cancel_outlined,
+              Icons.keyboard_arrow_left_rounded,
               color: Colors.grey,
             ),
           ),
@@ -41,7 +44,7 @@ class _UbahSandi2State extends State<UbahSandi2> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SettingAkun()));
+                              builder: (context) => const UbahSandi()));
                     },
                     child: const Text("Batal"),
                   ),
@@ -53,8 +56,7 @@ class _UbahSandi2State extends State<UbahSandi2> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  const KredensialPekerjaan()));
+                              builder: (context) => TambahPertanyaan()));
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.white,
@@ -79,7 +81,8 @@ class _UbahSandi2State extends State<UbahSandi2> {
               ),
             ),
           ],
-          backgroundColor: Colors.white,
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
         body: Column(
           children: [
@@ -131,27 +134,7 @@ class _UbahSandi2State extends State<UbahSandi2> {
                   const SizedBox(
                     height: 5,
                   ),
-                  TextField(
-                    obscureText: _isObscure,
-                    enableSuggestions: false,
-                    autocorrect: false,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        hintText: ' ',
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 7, horizontal: 15),
-                        suffixIcon: IconButton(
-                            icon: Icon(_isObscure
-                                ? Icons.visibility
-                                : Icons.visibility_off),
-                            onPressed: () {
-                              setState(() {
-                                _isObscure = !_isObscure;
-                              });
-                            })),
-                  ),
+                  const TextFieldPass(),
                   const SizedBox(
                     height: 15,
                   ),
@@ -171,27 +154,7 @@ class _UbahSandi2State extends State<UbahSandi2> {
                   const SizedBox(
                     height: 5,
                   ),
-                  TextField(
-                    obscureText: _iisObscure,
-                    enableSuggestions: false,
-                    autocorrect: false,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        hintText: ' ',
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 7, horizontal: 15),
-                        suffixIcon: IconButton(
-                            icon: Icon(_iisObscure
-                                ? Icons.visibility
-                                : Icons.visibility_off),
-                            onPressed: () {
-                              setState(() {
-                                _iisObscure = !_iisObscure;
-                              });
-                            })),
-                  ),
+                  const TextFieldPass(),
                 ],
               ),
             )
